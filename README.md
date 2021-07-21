@@ -64,7 +64,9 @@ else:
     print("Not connected...")
 ```
 
-**Note** : By default, the `.get()` and `.post()` methods return the JSON data from the endpoint's response directly **as a `dict`.** If you want to retrieve the response itself, you need to add parameter `get_response=True` to the method
+**Note**: By default, the `.get()` and `.post()` methods return the JSON data from the endpoint's response directly **as a `dict`.** If you want to retrieve the response itself, you need to add parameter `get_response=True` to the method
+
+**Note 2**: If you wish to add custom headers to the request, you should be able to pass a new dict containing your headers using `wp_api.update({...})`
 
 Result :
 ```
