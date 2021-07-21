@@ -1,16 +1,22 @@
-# This is a sample Python script.
+# This is an example code
+# Feel free to replace this with your own WordPress integration so that you can quickly test the API.
+from wpapijwt.wp_api import WordPressAPI
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    # First, define the WP API object
+    wp_api = WordPressAPI(domain="www.my-url-without-protocol.com", username="imthebest@gmail.com", password="PasswordImpossibleToHack")
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    # Then you can call .connect() to actually connect to the API
+    wp_api.connect()
+
+    # Always check if the API is connected !
+    if wp_api.connected:
+        print(f"{wp_api} Connected!")
+
+        # Then you can start playing with the API :)
+        get_myself = wp_api.get("/wp/v2/users/me")
+        print(f"Hello {get_myself['name']}")
+    else:
+        # Oops something went wrong!
+        print("Not connected...")
+
