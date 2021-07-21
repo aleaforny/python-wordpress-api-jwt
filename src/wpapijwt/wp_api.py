@@ -1,6 +1,6 @@
 import requests
 from requests.exceptions import HTTPError, ConnectionError
-from resources.functions import validate_protocol
+from .resources.functions import validate_protocol
 
 
 class WordPressAPI:
