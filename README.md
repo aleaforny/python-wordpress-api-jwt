@@ -64,7 +64,7 @@ else:
     print("Not connected...")
 ```
 
-**Note** : By default, the `.get()` and `.post()` methods are retrieving the JSON data from the endpoint's response directly and stores it in a `dict`. If you want to retrieve the response itself, you need to add parameter `get_response=True` to the method
+**Note** : By default, the `.get()` and `.post()` methods return the JSON data from the endpoint's response directly **as a `dict`.** If you want to retrieve the response itself, you need to add parameter `get_response=True` to the method
 
 Result :
 ```
